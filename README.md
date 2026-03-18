@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>EYILLA'S TASTY TREATS · BITING INTO BLISS</title>
-  <!-- Font Awesome 6 (free) -->
+  <title>EYILLA'S TASTY TREATS · rustic bakery</title>
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Cinematic Clash Display + Space Grotesk -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syne:wght@800;900&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Cormorant (elegant serif) + Josefin Sans (warm sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,529 +15,514 @@
       box-sizing: border-box;
     }
 
-    /* RADICAL COLOR SYSTEM — deep, warm, luxurious */
-    :root {
-      --obsidian: #1a0f0a;
-      --cocoa: #2c1810;
-      --ember: #d45f2e;
-      --gold-fusion: #c88c4b;
-      --cream-silk: #fae1c3;
-      --caramel-satin: #b4824a;
-      --rosewood: #592f1c;
-      --chocolate-velvet: #3f2317;
-      --liquid-amber: #e98a3e;
+    body {
+      background: #f7efe5;  // warm linen
+      font-family: 'Josefin Sans', sans-serif;
+      color: #3e2c1b;
+      line-height: 1.5;
     }
 
-    body {
-      background: var(--obsidian);
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--cream-silk);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* rustic artisanal container - handmade feel */
+    .artisan-container {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fdf9f2;
       position: relative;
+      box-shadow: 0 20px 40px rgba(98, 62, 34, 0.08);
       overflow-x: hidden;
     }
 
-    /* LIQUID BACKGROUND — abstract shapes that move */
-    .liquid-bg {
-      position: fixed;
-      width: 100%;
-      height: 100%;
+    /* handcrafted paper texture overlay */
+    .artisan-container::before {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
-      z-index: 0;
-      filter: blur(80px);
-      opacity: 0.6;
-    }
-
-    .liquid-bg span {
-      position: absolute;
-      width: 50vmax;
-      height: 50vmax;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, var(--ember), var(--rosewood));
-      animation: liquid-morph 18s infinite alternate ease-in-out;
-    }
-
-    .liquid-bg span:nth-child(1) {
-      top: -20vh;
-      right: -10vw;
-      background: radial-gradient(circle, #c06534, #4e2b19);
-      animation-duration: 24s;
-    }
-    .liquid-bg span:nth-child(2) {
-      bottom: -30vh;
-      left: -20vw;
-      width: 80vmax;
-      height: 80vmax;
-      background: radial-gradient(circle, #b4642e, #2e1b12);
-      animation-duration: 32s;
-      animation-direction: reverse;
-    }
-
-    @keyframes liquid-morph {
-      0% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 60% 40% 30% 70%; }
-      100% { transform: translate(8%, -5%) scale(1.2) rotate(8deg); border-radius: 30% 70% 60% 40%; }
-    }
-
-    /* MAIN SCULPTURAL CONTAINER — broken grid, asymmetric */
-    .dimensional-grid {
-      max-width: 480px;
       width: 100%;
-      margin: 0.8rem;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* kraft paper header */
+    .kraft-header {
+      background: #e5d3c0;
+      background-image: linear-gradient(45deg, #dac2aa 0%, #f0e1d0 100%);
+      border-bottom: 8px solid #b48b65;
+      padding: 2rem 1.5rem 1.5rem;
       position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      padding: 1rem 0;
+      box-shadow: inset 0 -2px 10px rgba(0,0,0,0.05);
     }
 
-    /* HYBRID CARD SYSTEM — deconstructed layout */
-    .hero-panel {
-      background: rgba(44, 24, 16, 0.7);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(212, 95, 46, 0.25);
-      border-radius: 3rem 3rem 3rem 0.5rem;
-      padding: 2rem 1.8rem;
-      box-shadow: 0 30px 40px -20px #140b07, inset 0 1px 2px rgba(255,215,160,0.15);
-      transform: rotate(-0.3deg);
-      transition: transform 0.3s;
+    .kraft-header::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, #a57144, #a57144 10px, #c9a27b 10px, #c9a27b 20px);
     }
 
-    .hero-panel:hover {
-      transform: rotate(0deg) scale(1.01);
-    }
-
-    .hero-clash {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .hero-clash h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 0.85;
-      text-transform: uppercase;
-      background: linear-gradient(130deg, #fccf9c, #eb9f60, #f7b475);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      max-width: 70%;
-      letter-spacing: -2px;
-      filter: drop-shadow(0 0 18px #c06028);
-    }
-
-    .slogan-mask {
-      background: var(--chocolate-velvet);
-      padding: 0.8rem 1.8rem;
-      border-radius: 100px;
-      font-size: 1.4rem;
+    .hand-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
       font-weight: 700;
-      border: 2px solid var(--liquid-amber);
-      transform: rotate(2deg) translateX(-10px);
-      color: #fadbb8;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      box-shadow: 0 10px 0 #341e14;
-      align-self: flex-end;
+      color: #4a3221;
+      line-height: 0.9;
+      text-shadow: 2px 2px 0 #e9cfb5;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
     }
 
-    /* SCULPTURAL PRODUCT GRID — broken into shards */
-    .product-shards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.9rem;
-      margin: 0.5rem 0 1rem;
-    }
-
-    .shard-item {
-      background: rgba(69, 37, 24, 0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid #b7653066;
-      border-radius: 2rem 0.5rem 2rem 0.5rem;
-      padding: 1.2rem 0.4rem;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #ffe4cb;
-      box-shadow: 8px 8px 0 #2f1b12;
-      transition: 0.15s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      backdrop-filter: blur(12px);
-    }
-
-    .shard-item i {
-      font-size: 2.2rem;
-      color: var(--liquid-amber);
-      filter: drop-shadow(2px 4px 4px #251106);
-    }
-
-    .shard-item:nth-child(2) { border-radius: 0.5rem 2rem 0.5rem 2rem; background: #4a2d1dcc; }
-    .shard-item:nth-child(5) { border-radius: 2rem 0.5rem 2rem 0.5rem; }
-    .shard-item:nth-child(7) { border-radius: 0.5rem 2rem 0.5rem 2rem; }
-    .shard-item:active { transform: scale(0.92); box-shadow: 2px 2px 0 #311d13; }
-
-    /* INFO PANEL — brutalist map integration */
-    .brutal-card {
-      background: #2f1b10e0;
-      backdrop-filter: blur(15px);
-      border: 1px solid #b3713e;
-      border-radius: 0.8rem 3rem 0.8rem 3rem;
-      padding: 1.8rem 1.2rem;
-      box-shadow: 20px 20px 0 #0d0704;
-    }
-
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .wa-phone-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .phone-slab {
-      background: #20120b;
-      border-radius: 2rem 0.5rem 2rem 0.5rem;
-      padding: 1rem 1.5rem;
-      flex: 1;
-      min-width: 130px;
-      border-left: 6px solid var(--ember);
-      font-weight: 700;
+    .hand-slogan {
+      display: inline-block;
+      background: #f3e1cf;
+      padding: 0.4rem 2rem;
+      border-radius: 30px 8px 30px 8px;
       font-size: 1.2rem;
+      font-weight: 400;
+      color: #6e4c30;
+      border: 1px solid #c9a27b;
+      box-shadow: 0 5px 0 #ac8262;
+      transform: rotate(-1deg);
+      font-style: italic;
+    }
+
+    /* hand-drawn category section */
+    .category-rustic {
+      padding: 2rem 1.2rem 1rem;
+    }
+
+    .section-title-rustic {
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fac89d;
+      margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #5c3f2b;
+      border-bottom: 2px dashed #cbad8b;
+      padding-bottom: 0.5rem;
     }
 
-    .phone-slab i {
-      font-size: 1.8rem;
+    .section-title-rustic i {
+      color: #a76f44;
+      font-size: 2rem;
     }
 
-    .map-dystopian {
-      border-radius: 1rem 3rem 1rem 3rem;
+    .rustic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .rustic-card {
+      background: #fcf5ec;
+      border: 2px solid #dbb99a;
+      border-radius: 30px 5px 30px 5px;
+      padding: 1.5rem 0.5rem;
+      text-align: center;
+      box-shadow: 8px 8px 0 #b18b6b;
+      transition: 0.1s ease;
+    }
+
+    .rustic-card:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0 #b18b6b;
+    }
+
+    .rustic-card i {
+      font-size: 2.5rem;
+      color: #b56f3a;
+      margin-bottom: 0.4rem;
+    }
+
+    .rustic-card span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #3f2b1a;
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* contact chalkboard style */
+    .chalkboard-panel {
+      background: #2f241b;
+      border: 8px solid #876b51;
+      border-radius: 40px 10px 40px 10px;
+      margin: 1.5rem 1.2rem;
+      padding: 1.8rem 1.2rem;
+      box-shadow: 15px 15px 0 #5f4837;
+      color: #f2e2d0;
+      position: relative;
+    }
+
+    .chalkboard-panel::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 2px dashed #b48b65;
+      border-radius: 30px 5px 30px 5px;
+      pointer-events: none;
+    }
+
+    .chalk-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .chalk-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #3d3026;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px 5px 40px 5px;
+      border: 2px solid #b78f6a;
+    }
+
+    .chalk-row i {
+      font-size: 2rem;
+      color: #deb887;
+      width: 2.5rem;
+      text-align: center;
+    }
+
+    .chalk-row a {
+      color: #f7dcc0;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .whatsapp-chalk {
+      background: #1d9348;
+      border: 2px solid #a5d6a5;
+      color: white;
+      padding: 0.2rem 1rem;
+      border-radius: 30px 3px 30px 3px;
+      font-size: 1rem;
+    }
+
+    /* map - aged paper style */
+    .map-antique {
+      border-radius: 30px 5px 30px 5px;
       overflow: hidden;
-      height: 190px;
-      border: 3px solid #a65323;
-      box-shadow: 12px 12px 0 #341e12;
+      height: 170px;
+      border: 5px solid #c5a176;
+      box-shadow: 10px 10px 0 #7a5f48;
       margin: 1.8rem 0 1rem;
+      filter: sepia(0.3) contrast(0.95);
     }
 
-    .map-dystopian iframe {
+    .map-antique iframe {
       width: 100%;
       height: 100%;
-      filter: grayscale(0.7) sepia(0.5) hue-rotate(320deg);
     }
 
-    .address-chaos {
-      font-size: 1.1rem;
-      background: #4e311f;
-      padding: 1rem 1.8rem;
-      border-radius: 3rem 0.5rem 3rem 0.5rem;
+    .address-hand {
+      background: #b48b65;
+      color: #2f1f14;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px 5px 60px 5px;
       display: inline-block;
       font-weight: 600;
-      border: 1px dashed #e29f60;
-      letter-spacing: 0px;
+      border: 3px solid #e5caaf;
+      font-size: 0.95rem;
     }
 
-    /* ORDER FORM — deconstructed brutalist */
-    .order-abyss {
-      background: #23160ed9;
-      backdrop-filter: blur(25px);
-      border-radius: 3rem 0.3rem 3rem 0.3rem;
-      padding: 2.2rem 1.5rem;
-      border: 2px solid #b55d2b;
-      box-shadow: -15px 20px 0 #2b180f, inset 0 0 30px #3c2316;
+    /* order form - handmade paper */
+    .order-handmade {
+      background: #f7ecde;
+      border: 3px solid #be946e;
+      border-radius: 50px 10px 50px 10px;
+      margin: 2rem 1.2rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 12px 12px 0 #ad8564;
     }
 
-    .order-abyss h2 {
+    .order-handmade h2 {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 2.8rem;
-      font-weight: 900;
-      font-family: 'Syne', sans-serif;
-      color: #fbca98;
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 2rem;
-      word-break: break-word;
-    }
-
-    .input-gruv {
+      color: #4f3521;
+      border-left: 8px solid #b87e53;
+      padding-left: 1rem;
       margin-bottom: 1.8rem;
     }
 
-    .input-gruv label {
+    .form-rustic-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .form-rustic-group label {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-      color: #edb581;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      gap: 6px;
+      font-weight: 600;
+      color: #785f48;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
     }
 
-    .input-gruv input, .input-gruv select, .input-gruv textarea {
+    .form-rustic-group input,
+    .form-rustic-group select,
+    .form-rustic-group textarea {
       width: 100%;
-      background: #312016;
-      border: 2px solid #9f6137;
-      border-radius: 2rem 0.3rem 2rem 0.3rem;
-      padding: 1.2rem 1.5rem;
-      font-size: 1.1rem;
-      color: #ffe9d7;
+      background: #fffaf2;
+      border: 2px solid #c7a27d;
+      border-radius: 30px 3px 30px 3px;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      color: #3b2b1b;
       outline: none;
-      transition: 0.2s;
     }
 
-    .input-gruv input:focus, .input-gruv select:focus, .input-gruv textarea:focus {
-      border-color: #f5984a;
-      box-shadow: 0 0 0 4px #ac592e6b;
-      background: #3f281b;
+    .form-rustic-group input:focus,
+    .form-rustic-group select:focus,
+    .form-rustic-group textarea:focus {
+      border-color: #a45828;
+      box-shadow: 0 0 0 3px #e7cbb2;
     }
 
-    .order-trigger {
-      background: #d4662b;
+    .btn-artisan {
+      background: #b87e53;
       border: none;
-      padding: 1.6rem;
       width: 100%;
-      border-radius: 3rem 0.5rem 3rem 0.5rem;
-      font-size: 2.2rem;
-      font-weight: 900;
-      font-family: 'Syne', sans-serif;
-      color: #1f110a;
+      padding: 1.4rem;
+      border-radius: 60px 5px 60px 5px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fcf2e7;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
-      box-shadow: 0 15px 0 #733e1f;
-      transition: 0.1s;
-      margin-top: 1.2rem;
-      text-transform: uppercase;
+      gap: 12px;
+      box-shadow: 0 12px 0 #6e4d33;
+      margin: 1.2rem 0 0.5rem;
+      cursor: pointer;
+      transition: 0.07s;
     }
 
-    .order-trigger:active {
-      transform: translateY(8px);
-      box-shadow: 0 7px 0 #733e1f;
+    .btn-artisan:active {
+      transform: translateY(5px);
+      box-shadow: 0 7px 0 #6e4d33;
     }
 
-    /* special footer */
-    .signature-offset {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: #cfa977;
-      background: #1e130d;
-      border-radius: 0.5rem 2rem 0.5rem 2rem;
-      padding: 1rem 1.5rem;
-      border: 1px solid #825d3e;
-      margin-bottom: 0.5rem;
+    /* footer - twine style */
+    .footer-rustic {
+      background: #dac2aa;
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 6px double #8c6f53;
+      color: #3b2b1b;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
 
-    /* loader cinematic */
-    #deep-loader {
+    .footer-rustic i {
+      color: #a45828;
+    }
+
+    /* loader - hand drawn */
+    #loader-rustic {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: #0e0804;
+      background: #f3e5d5;
       z-index: 9999;
       display: flex;
-      justify-content: center;
       align-items: center;
-      transition: 1s;
+      justify-content: center;
+      transition: 0.5s;
     }
 
-    .loader-content {
+    .hand-loader {
       text-align: center;
-      animation: glitch 1.5s infinite;
+      background: #eedbcb;
+      padding: 2rem;
+      border-radius: 60px 10px 60px 10px;
+      border: 6px solid #c9a27b;
     }
 
-    @keyframes glitch {
-      0% { transform: skew(0deg, 0deg); opacity: 1; }
-      5% { transform: skew(5deg, -2deg); opacity: 0.8; text-shadow: 3px 0 red; }
-      10% { transform: skew(-5deg, 2deg); text-shadow: -3px 0 blue; }
-      15% { transform: skew(0deg); }
-    }
-
-    .loader-content i {
-      font-size: 5rem;
-      color: var(--liquid-amber);
-      filter: drop-shadow(0 0 25px #f28b3c);
-    }
-
-    .loader-content h2 {
+    .hand-loader i {
       font-size: 4rem;
-      font-family: 'Syne', sans-serif;
-      color: #fcc694;
-      line-height: 0.9;
+      color: #9f623b;
+      animation: knead 1.2s infinite alternate;
+    }
+
+    @keyframes knead {
+      0% { transform: scale(1) rotate(-5deg); }
+      100% { transform: scale(1.1) rotate(5deg); }
+    }
+
+    .hand-loader h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: #472e1b;
     }
   </style>
 </head>
 <body>
-  <!-- DEEP LOADER (disappears after 2s) -->
-  <div id="deep-loader">
-    <div class="loader-content">
-      <i class="fas fa-crown"></i>
+  <!-- rustic loader -->
+  <div id="loader-rustic">
+    <div class="hand-loader">
+      <i class="fas fa-cookie-bite"></i>
       <h2>EYILLA'S</h2>
-      <div style="color:#c3824a;">BITE INTO BLISS</div>
+      <p style="color: #73543a;">baking from scratch...</p>
     </div>
   </div>
 
-  <!-- LIQUID LIVING BACKGROUND -->
-  <div class="liquid-bg">
-    <span></span>
-    <span></span>
-  </div>
+  <!-- main container -->
+  <div class="artisan-container">
 
-  <!-- MAIN ASYMMETRIC GRID -->
-  <div class="dimensional-grid">
+    <!-- kraft paper header -->
+    <div class="kraft-header">
+      <div class="hand-logo">EYILLA'S<br>TASTY TREATS</div>
+      <div class="hand-slogan"><i class="fas fa-leaf"></i> BITE INTO BLISS <i class="fas fa-leaf"></i></div>
+    </div>
 
-    <!-- HERO AREA: broken hierarchy -->
-    <div class="hero-panel">
-      <div class="hero-clash">
-        <h1>EYILLA'S<br>TASTY<br>TREATS</h1>
-        <div class="slogan-mask">#BITEINTOBLISS</div>
+    <!-- rustic categories -->
+    <div class="category-rustic">
+      <div class="section-title-rustic">
+        <i class="fas fa-oven"></i> fresh from the oven
+      </div>
+      <div class="rustic-grid">
+        <div class="rustic-card"><i class="fas fa-milk"></i><span>Milkshakes</span></div>
+        <div class="rustic-card"><i class="fas fa-ice-cream"></i><span>Frosty Ice</span></div>
+        <div class="rustic-card"><i class="fas fa-glass-cheers"></i><span>Juices & Drinks</span></div>
+        <div class="rustic-card"><i class="fas fa-drumstick-bite"></i><span>Small Chops</span></div>
+        <div class="rustic-card"><i class="fas fa-birthday-cake"></i><span>Birthday Cakes</span></div>
+        <div class="rustic-card"><i class="fas fa-ring"></i><span>Wedding Cakes</span></div>
+        <div class="rustic-card"><i class="fas fa-heart"></i><span>Bento & Cupcakes</span></div>
+        <div class="rustic-card"><i class="fas fa-bread-slice"></i><span>Pastries</span></div>
       </div>
     </div>
 
-    <!-- PRODUCT SHARDS: edgy fragments -->
-    <div class="product-shards">
-      <div class="shard-item"><i class="fas fa-milk"></i> MILKSHAKES</div>
-      <div class="shard-item"><i class="fas fa-ice-cream"></i> FROSTY ICE</div>
-      <div class="shard-item"><i class="fas fa-wine-glass"></i> JUICES</div>
-      <div class="shard-item"><i class="fas fa-drumstick-bite"></i> SMALL CHOPS</div>
-      <div class="shard-item"><i class="fas fa-cake"></i> BIRTHDAY</div>
-      <div class="shard-item"><i class="fas fa-ring"></i> WEDDING</div>
-      <div class="shard-item"><i class="fas fa-cupcake"></i> BENTO CUP</div>
-      <div class="shard-item"><i class="fas fa-bread-slice"></i> PASTRIES</div>
-      <div class="shard-item"><i class="fas fa-candy-cane"></i> EXTRA</div>
-    </div>
-
-    <!-- CONTACT + MAP: brutalist block -->
-    <div class="brutal-card">
-      <div class="contact-block">
-        <div class="wa-phone-group">
-          <div class="phone-slab"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/233599838472?text=EYILLA!%20I%20need%20the%20deep%20treats%20🔥" style="color:#fac89d; text-decoration:none;">0599838472</a></div>
-          <div class="phone-slab"><i class="fas fa-phone"></i> <a href="tel:+233272406561" style="color:#fac89d; text-decoration:none;">0272406561</a></div>
+    <!-- chalkboard contact panel -->
+    <div class="chalkboard-panel">
+      <div class="chalk-contact">
+        <div class="chalk-row">
+          <i class="fab fa-whatsapp"></i>
+          <span style="flex:1;"><a href="https://wa.me/233559116829?text=Hello%20Eyilla!%20I'd%20love%20some%20fresh%20treats%20🥖">0559116829</a></span>
+          <span class="whatsapp-chalk"><i class="fab fa-whatsapp"></i> chat</span>
+        </div>
+        <div class="chalk-row">
+          <i class="fas fa-phone-alt"></i>
+          <span><a href="tel:+233272406561">0272406561</a></span>
         </div>
 
-        <!-- MAP with attitude -->
-        <div class="map-dystopian">
+        <!-- antique map -->
+        <div class="map-antique">
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.4582%2C5.5345%2C-0.4325%2C5.5500&layer=mapnik&marker=5.5425%2C-0.4453" loading="lazy"></iframe>
         </div>
-        <div class="address-chaos">
-          <i class="fas fa-location-dot" style="color:#f28237;"></i> KASOA WALENTU, 2ND STREET BEHIND CHURCH OF PENTECOST
+        <div class="address-hand">
+          <i class="fas fa-location-dot"></i> KASOA WALENTU, 2ND STREET BEHIND CHURCH OF PENTECOST
         </div>
       </div>
     </div>
 
-    <!-- ORDER FORM — deep, dark, interactive -->
-    <div class="order-abyss" id="order-section">
-      <h2>ORDER<br>PORTAL</h2>
-      <form id="waFormDeep" onsubmit="return sendDeepOrder(event)">
-        <div class="input-gruv">
-          <label><i class="fas fa-user"></i> YOUR IDENTITY</label>
-          <input type="text" id="deepName" placeholder="e.g. Ama" required>
+    <!-- handmade order form -->
+    <div class="order-handmade">
+      <h2><i class="fas fa-scroll"></i> order form</h2>
+      <form id="rusticOrderForm" onsubmit="return sendRusticOrder(event)">
+        <div class="form-rustic-group">
+          <label><i class="fas fa-user"></i> your name</label>
+          <input type="text" id="rusticName" placeholder="e.g. Ama" required>
         </div>
-        <div class="input-gruv">
-          <label><i class="fas fa-cake"></i> CRAVING</label>
-          <select id="deepCategory" required>
-            <option value="" disabled selected>— SELECT TREAT —</option>
-            <option>MILKSHAKE</option>
-            <option>FROSTY ICE</option>
-            <option>JUICE/DRINK</option>
-            <option>SMALL CHOPS</option>
-            <option>BIRTHDAY CAKE</option>
-            <option>WEDDING CAKE</option>
-            <option>BENTO/CUPCAKE</option>
-            <option>PASTRIES</option>
+        <div class="form-rustic-group">
+          <label><i class="fas fa-cake"></i> select your treat</label>
+          <select id="rusticCategory" required>
+            <option value="" disabled selected>– choose one –</option>
+            <option>Milkshakes</option>
+            <option>Frosty Ice Creams</option>
+            <option>Juices & Drinks</option>
+            <option>Small Chops</option>
+            <option>Birthday Cakes</option>
+            <option>Wedding Cakes</option>
+            <option>Bento & Cupcakes</option>
+            <option>Pastries</option>
           </select>
         </div>
-        <div class="input-gruv">
-          <label><i class="fas fa-pen"></i> DETAILS / FLAVOUR</label>
-          <textarea id="deepDetails" rows="2" placeholder="e.g. 2 chocolate shakes, red velvet bento" required></textarea>
+        <div class="form-rustic-group">
+          <label><i class="fas fa-pen"></i> special requests / flavors</label>
+          <textarea id="rusticDetails" rows="2" placeholder="e.g. 2 chocolate milkshakes, 1 red velvet bento..." required></textarea>
         </div>
-        <div class="input-gruv">
-          <label><i class="fas fa-location-dot"></i> DELIVERY ZONE</label>
-          <input type="text" id="deepLocation" value="Kasoa Walentu" required>
+        <div class="form-rustic-group">
+          <label><i class="fas fa-location-dot"></i> delivery location</label>
+          <input type="text" id="rusticLocation" value="Kasoa Walentu" required>
         </div>
-        <div class="input-gruv">
-          <label><i class="fas fa-coins"></i> BUDGET (GHS)</label>
-          <input type="text" id="deepBudget" placeholder="e.g. 250" required>
+        <div class="form-rustic-group">
+          <label><i class="fas fa-coins"></i> your budget (GHS)</label>
+          <input type="text" id="rusticBudget" placeholder="e.g. 200" required>
         </div>
-        <button type="submit" class="order-trigger"><i class="fab fa-whatsapp"></i> I'M READY</button>
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #ad7d56; text-align: center;">⇾ you'll continue on WhatsApp with order pre-filled</p>
+
+        <button type="submit" class="btn-artisan"><i class="fab fa-whatsapp"></i> send order</button>
+        <p style="text-align:center; color:#7d5f46; margin-top:1rem; font-size:0.9rem;">we'll reply on WhatsApp to confirm</p>
       </form>
     </div>
 
-    <!-- footer with brutal touch -->
-    <div class="signature-offset">
-      <span>© EYILLA'S DEEP TREATS</span>
-      <span>📍 WALENTU 2ND ST</span>
+    <!-- rustic footer -->
+    <div class="footer-rustic">
+      <p><i class="fas fa-crown"></i> EYILLA'S TASTY TREATS · handmade with love</p>
+      <p style="margin-top:0.5rem;">🍪 BITE INTO BLISS 🍰</p>
+      <p style="margin-top:0.5rem;">📍 Kasoa Walentu, 2nd Street behind Church of Pentecost</p>
     </div>
   </div>
 
   <script>
-    // kill loader after 2 sec
+    // remove rustic loader
     window.addEventListener('load', function() {
       setTimeout(() => {
-        document.getElementById('deep-loader').style.opacity = '0';
+        document.getElementById('loader-rustic').style.opacity = '0';
         setTimeout(() => {
-          document.getElementById('deep-loader').style.display = 'none';
-        }, 1000);
-      }, 1800);
+          document.getElementById('loader-rustic').style.display = 'none';
+        }, 500);
+      }, 1000);
     });
 
-    // whatsapp redirect with raw edge
-    function sendDeepOrder(e) {
+    // WhatsApp order - rustic style
+    function sendRusticOrder(e) {
       e.preventDefault();
 
-      const name = document.getElementById('deepName').value.trim();
-      const category = document.getElementById('deepCategory').value;
-      const details = document.getElementById('deepDetails').value.trim();
-      const location = document.getElementById('deepLocation').value.trim();
-      const budget = document.getElementById('deepBudget').value.trim();
+      const name = document.getElementById('rusticName').value.trim();
+      const category = document.getElementById('rusticCategory').value;
+      const details = document.getElementById('rusticDetails').value.trim();
+      const location = document.getElementById('rusticLocation').value.trim();
+      const budget = document.getElementById('rusticBudget').value.trim();
 
       if (!name || !category || !details || !location || !budget) {
-        alert("🔥 fill every field — Eyilla demands perfection.");
+        alert("🥖 please fill all fields — we're ready to bake for you!");
         return false;
       }
 
-      const waNumber = '233599838472';
+      const waNumber = '233559116829';  // 0559116829
       const message = 
-        `🔴 *EYILLA'S DEEP ORDER* 🔴%0a` +
-        `⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯%0a` +
-        `👤 *NAME:* ${name}%0a` +
-        `🍫 *TREAT:* ${category}%0a` +
-        `📦 *DETAILS:* ${details}%0a` +
-        `📍 *WHERE:* ${location}%0a` +
-        `💰 *BUDGET:* GHS ${budget}%0a` +
-        `⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯%0a` +
-        `_BITE INTO BLISS_ 🍪`;
+        `🥨 *Eyilla's Rustic Order* 🥨%0a` +
+        `━━━━━━━━━━━━━━%0a` +
+        `👤 *Name:* ${name}%0a` +
+        `🍰 *Treat:* ${category}%0a` +
+        `📝 *Details:* ${details}%0a` +
+        `📍 *Location:* ${location}%0a` +
+        `💰 *Budget:* GHS ${budget}%0a` +
+        `━━━━━━━━━━━━━━%0a` +
+        `✨ *BITE INTO BLISS* ✨`;
 
       window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
       return false;
     }
-
-    // dynamic shard haptics
-    document.querySelectorAll('.shard-item').forEach(el => {
-      el.addEventListener('click', function() { this.style.backgroundColor = '#623b26'; setTimeout(()=> this.style.backgroundColor = '', 100); });
-    });
   </script>
 </body>
 </html>
