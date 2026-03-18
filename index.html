@@ -6,65 +6,45 @@
   <title>EYILLA'S TASTY TREATS · rustic bakery</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Cormorant (elegant serif) + Josefin Sans (warm sans) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #f7efe5;  // warm linen
+      background: #f7efe5;
       font-family: 'Josefin Sans', sans-serif;
       color: #3e2c1b;
       line-height: 1.5;
     }
-
-    /* rustic artisanal container - handmade feel */
     .artisan-container {
       max-width: 480px;
       margin: 0 auto;
       background: #fdf9f2;
       position: relative;
-      box-shadow: 0 20px 40px rgba(98, 62, 34, 0.08);
+      box-shadow: 0 20px 40px rgba(98,62,34,0.08);
       overflow-x: hidden;
     }
-
-    /* handcrafted paper texture overlay */
     .artisan-container::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
       pointer-events: none;
       z-index: 2;
     }
-
-    /* kraft paper header */
     .kraft-header {
       background: #e5d3c0;
       background-image: linear-gradient(45deg, #dac2aa 0%, #f0e1d0 100%);
       border-bottom: 8px solid #b48b65;
       padding: 2rem 1.5rem 1.5rem;
       position: relative;
-      box-shadow: inset 0 -2px 10px rgba(0,0,0,0.05);
     }
-
     .kraft-header::after {
       content: '';
       position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 100%;
-      height: 4px;
+      bottom: -8px; left: 0; width: 100%; height: 4px;
       background: repeating-linear-gradient(90deg, #a57144, #a57144 10px, #c9a27b 10px, #c9a27b 20px);
     }
-
     .hand-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.8rem;
@@ -75,26 +55,19 @@
       letter-spacing: -0.02em;
       margin-bottom: 0.3rem;
     }
-
     .hand-slogan {
       display: inline-block;
       background: #f3e1cf;
       padding: 0.4rem 2rem;
       border-radius: 30px 8px 30px 8px;
       font-size: 1.2rem;
-      font-weight: 400;
       color: #6e4c30;
       border: 1px solid #c9a27b;
       box-shadow: 0 5px 0 #ac8262;
       transform: rotate(-1deg);
       font-style: italic;
     }
-
-    /* hand-drawn category section */
-    .category-rustic {
-      padding: 2rem 1.2rem 1rem;
-    }
-
+    .category-rustic { padding: 2rem 1.2rem 1rem; }
     .section-title-rustic {
       display: flex;
       align-items: center;
@@ -102,23 +75,16 @@
       margin-bottom: 1.5rem;
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      font-weight: 600;
       color: #5c3f2b;
       border-bottom: 2px dashed #cbad8b;
       padding-bottom: 0.5rem;
     }
-
-    .section-title-rustic i {
-      color: #a76f44;
-      font-size: 2rem;
-    }
-
+    .section-title-rustic i { color: #a76f44; font-size: 2rem; }
     .rustic-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.2rem;
     }
-
     .rustic-card {
       background: #fcf5ec;
       border: 2px solid #dbb99a;
@@ -128,18 +94,15 @@
       box-shadow: 8px 8px 0 #b18b6b;
       transition: 0.1s ease;
     }
-
     .rustic-card:hover {
-      transform: translate(2px, 2px);
+      transform: translate(2px,2px);
       box-shadow: 4px 4px 0 #b18b6b;
     }
-
     .rustic-card i {
       font-size: 2.5rem;
       color: #b56f3a;
       margin-bottom: 0.4rem;
     }
-
     .rustic-card span {
       font-weight: 600;
       font-size: 1.1rem;
@@ -147,8 +110,6 @@
       display: block;
       font-family: 'Cormorant Garamond', serif;
     }
-
-    /* contact chalkboard style */
     .chalkboard-panel {
       background: #2f241b;
       border: 8px solid #876b51;
@@ -159,27 +120,15 @@
       color: #f2e2d0;
       position: relative;
     }
-
     .chalkboard-panel::before {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 5px;
-      right: 5px;
-      bottom: 5px;
+      top: 5px; left: 5px; right: 5px; bottom: 5px;
       border: 2px dashed #b48b65;
       border-radius: 30px 5px 30px 5px;
       pointer-events: none;
     }
-
-    .chalk-contact {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      position: relative;
-      z-index: 5;
-    }
-
+    .chalk-contact { position: relative; z-index: 5; }
     .chalk-row {
       display: flex;
       align-items: center;
@@ -188,33 +137,17 @@
       padding: 0.8rem 1.2rem;
       border-radius: 40px 5px 40px 5px;
       border: 2px solid #b78f6a;
+      margin-bottom: 1rem;
     }
-
-    .chalk-row i {
-      font-size: 2rem;
-      color: #deb887;
-      width: 2.5rem;
-      text-align: center;
-    }
-
-    .chalk-row a {
-      color: #f7dcc0;
-      text-decoration: none;
-      font-size: 1.3rem;
-      font-weight: 600;
-      font-family: 'Cormorant Garamond', serif;
-    }
-
+    .chalk-row i { font-size: 2rem; color: #deb887; width: 2.5rem; text-align: center; }
+    .chalk-row a { color: #f7dcc0; text-decoration: none; font-size: 1.3rem; font-weight: 600; font-family: 'Cormorant Garamond', serif; }
     .whatsapp-chalk {
       background: #1d9348;
       border: 2px solid #a5d6a5;
       color: white;
       padding: 0.2rem 1rem;
       border-radius: 30px 3px 30px 3px;
-      font-size: 1rem;
     }
-
-    /* map - aged paper style */
     .map-antique {
       border-radius: 30px 5px 30px 5px;
       overflow: hidden;
@@ -224,24 +157,15 @@
       margin: 1.8rem 0 1rem;
       filter: sepia(0.3) contrast(0.95);
     }
-
-    .map-antique iframe {
-      width: 100%;
-      height: 100%;
-    }
-
+    .map-antique iframe { width: 100%; height: 100%; }
     .address-hand {
       background: #b48b65;
       color: #2f1f14;
       padding: 0.8rem 1.5rem;
       border-radius: 60px 5px 60px 5px;
       display: inline-block;
-      font-weight: 600;
       border: 3px solid #e5caaf;
-      font-size: 0.95rem;
     }
-
-    /* order form - handmade paper */
     .order-handmade {
       background: #f7ecde;
       border: 3px solid #be946e;
@@ -250,7 +174,6 @@
       padding: 2rem 1.5rem;
       box-shadow: 12px 12px 0 #ad8564;
     }
-
     .order-handmade h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.8rem;
@@ -259,11 +182,7 @@
       padding-left: 1rem;
       margin-bottom: 1.8rem;
     }
-
-    .form-rustic-group {
-      margin-bottom: 1.3rem;
-    }
-
+    .form-rustic-group { margin-bottom: 1.3rem; }
     .form-rustic-group label {
       display: flex;
       align-items: center;
@@ -271,9 +190,7 @@
       font-weight: 600;
       color: #785f48;
       margin-bottom: 0.3rem;
-      font-size: 1rem;
     }
-
     .form-rustic-group input,
     .form-rustic-group select,
     .form-rustic-group textarea {
@@ -286,14 +203,12 @@
       color: #3b2b1b;
       outline: none;
     }
-
     .form-rustic-group input:focus,
     .form-rustic-group select:focus,
     .form-rustic-group textarea:focus {
       border-color: #a45828;
       box-shadow: 0 0 0 3px #e7cbb2;
     }
-
     .btn-artisan {
       background: #b87e53;
       border: none;
@@ -313,34 +228,21 @@
       cursor: pointer;
       transition: 0.07s;
     }
-
     .btn-artisan:active {
       transform: translateY(5px);
       box-shadow: 0 7px 0 #6e4d33;
     }
-
-    /* footer - twine style */
     .footer-rustic {
       background: #dac2aa;
       padding: 1.5rem;
       text-align: center;
       border-top: 6px double #8c6f53;
       color: #3b2b1b;
-      font-size: 1rem;
       margin-top: 1rem;
     }
-
-    .footer-rustic i {
-      color: #a45828;
-    }
-
-    /* loader - hand drawn */
     #loader-rustic {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: #f3e5d5;
       z-index: 9999;
       display: flex;
@@ -348,7 +250,6 @@
       justify-content: center;
       transition: 0.5s;
     }
-
     .hand-loader {
       text-align: center;
       background: #eedbcb;
@@ -356,18 +257,15 @@
       border-radius: 60px 10px 60px 10px;
       border: 6px solid #c9a27b;
     }
-
     .hand-loader i {
       font-size: 4rem;
       color: #9f623b;
       animation: knead 1.2s infinite alternate;
     }
-
     @keyframes knead {
       0% { transform: scale(1) rotate(-5deg); }
       100% { transform: scale(1.1) rotate(5deg); }
     }
-
     .hand-loader h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3rem;
@@ -376,29 +274,22 @@
   </style>
 </head>
 <body>
-  <!-- rustic loader -->
   <div id="loader-rustic">
     <div class="hand-loader">
       <i class="fas fa-cookie-bite"></i>
       <h2>EYILLA'S</h2>
-      <p style="color: #73543a;">baking from scratch...</p>
+      <p style="color:#73543a;">baking from scratch...</p>
     </div>
   </div>
 
-  <!-- main container -->
   <div class="artisan-container">
-
-    <!-- kraft paper header -->
     <div class="kraft-header">
       <div class="hand-logo">EYILLA'S<br>TASTY TREATS</div>
       <div class="hand-slogan"><i class="fas fa-leaf"></i> BITE INTO BLISS <i class="fas fa-leaf"></i></div>
     </div>
 
-    <!-- rustic categories -->
     <div class="category-rustic">
-      <div class="section-title-rustic">
-        <i class="fas fa-oven"></i> fresh from the oven
-      </div>
+      <div class="section-title-rustic"><i class="fas fa-oven"></i> fresh from the oven</div>
       <div class="rustic-grid">
         <div class="rustic-card"><i class="fas fa-milk"></i><span>Milkshakes</span></div>
         <div class="rustic-card"><i class="fas fa-ice-cream"></i><span>Frosty Ice</span></div>
@@ -411,30 +302,26 @@
       </div>
     </div>
 
-    <!-- chalkboard contact panel -->
     <div class="chalkboard-panel">
       <div class="chalk-contact">
         <div class="chalk-row">
           <i class="fab fa-whatsapp"></i>
-          <span style="flex:1;"><a href="https://wa.me/233559116829?text=Hello%20Eyilla!%20I'd%20love%20some%20fresh%20treats%20🥖">0559116829</a></span>
+          <span style="flex:1;"><a href="https://wa.me/233550335932?text=Hello%20Eyilla!%20I'd%20love%20some%20fresh%20treats%20🥖">0550335932</a></span>
           <span class="whatsapp-chalk"><i class="fab fa-whatsapp"></i> chat</span>
         </div>
         <div class="chalk-row">
           <i class="fas fa-phone-alt"></i>
-          <span><a href="tel:+233272406561">0272406561</a></span>
+          <span><a href="tel:+233550335932">0550335932</a></span>
         </div>
-
-        <!-- antique map -->
         <div class="map-antique">
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.4582%2C5.5345%2C-0.4325%2C5.5500&layer=mapnik&marker=5.5425%2C-0.4453" loading="lazy"></iframe>
         </div>
         <div class="address-hand">
-          <i class="fas fa-location-dot"></i> KASOA WALENTU, 2ND STREET BEHIND CHURCH OF PENTECOST
+          <i class="fas fa-location-dot"></i> NORTH LEGON / KASOA
         </div>
       </div>
     </div>
 
-    <!-- handmade order form -->
     <div class="order-handmade">
       <h2><i class="fas fa-scroll"></i> order form</h2>
       <form id="rusticOrderForm" onsubmit="return sendRusticOrder(event)">
@@ -462,28 +349,25 @@
         </div>
         <div class="form-rustic-group">
           <label><i class="fas fa-location-dot"></i> delivery location</label>
-          <input type="text" id="rusticLocation" value="Kasoa Walentu" required>
+          <input type="text" id="rusticLocation" value="North Legon / Kasoa" required>
         </div>
         <div class="form-rustic-group">
           <label><i class="fas fa-coins"></i> your budget (GHS)</label>
           <input type="text" id="rusticBudget" placeholder="e.g. 200" required>
         </div>
-
         <button type="submit" class="btn-artisan"><i class="fab fa-whatsapp"></i> send order</button>
         <p style="text-align:center; color:#7d5f46; margin-top:1rem; font-size:0.9rem;">we'll reply on WhatsApp to confirm</p>
       </form>
     </div>
 
-    <!-- rustic footer -->
     <div class="footer-rustic">
       <p><i class="fas fa-crown"></i> EYILLA'S TASTY TREATS · handmade with love</p>
       <p style="margin-top:0.5rem;">🍪 BITE INTO BLISS 🍰</p>
-      <p style="margin-top:0.5rem;">📍 Kasoa Walentu, 2nd Street behind Church of Pentecost</p>
+      <p style="margin-top:0.5rem;">📍 NORTH LEGON / KASOA</p>
     </div>
   </div>
 
   <script>
-    // remove rustic loader
     window.addEventListener('load', function() {
       setTimeout(() => {
         document.getElementById('loader-rustic').style.opacity = '0';
@@ -493,33 +377,19 @@
       }, 1000);
     });
 
-    // WhatsApp order - rustic style
     function sendRusticOrder(e) {
       e.preventDefault();
-
       const name = document.getElementById('rusticName').value.trim();
       const category = document.getElementById('rusticCategory').value;
       const details = document.getElementById('rusticDetails').value.trim();
       const location = document.getElementById('rusticLocation').value.trim();
       const budget = document.getElementById('rusticBudget').value.trim();
-
       if (!name || !category || !details || !location || !budget) {
         alert("🥖 please fill all fields — we're ready to bake for you!");
         return false;
       }
-
-      const waNumber = '233559116829';  // 0559116829
-      const message = 
-        `🥨 *Eyilla's Rustic Order* 🥨%0a` +
-        `━━━━━━━━━━━━━━%0a` +
-        `👤 *Name:* ${name}%0a` +
-        `🍰 *Treat:* ${category}%0a` +
-        `📝 *Details:* ${details}%0a` +
-        `📍 *Location:* ${location}%0a` +
-        `💰 *Budget:* GHS ${budget}%0a` +
-        `━━━━━━━━━━━━━━%0a` +
-        `✨ *BITE INTO BLISS* ✨`;
-
+      const waNumber = '233550335932';
+      const message = `🥨 *Eyilla's Rustic Order* 🥨%0a━━━━━━━━━━━━━━%0a👤 *Name:* ${name}%0a🍰 *Treat:* ${category}%0a📝 *Details:* ${details}%0a📍 *Location:* ${location}%0a💰 *Budget:* GHS ${budget}%0a━━━━━━━━━━━━━━%0a✨ *BITE INTO BLISS* ✨`;
       window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
       return false;
     }
